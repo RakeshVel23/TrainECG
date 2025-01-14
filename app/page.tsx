@@ -10,6 +10,7 @@ export default function ECGAxisQuiz() {
   const [qrsData, setQRSData] = useState({ leadI: 0, leadAVF: 0 })
   const [userSelection, setUserSelection] = useState<{ x: number, y: number } | null>(null)
   const [feedback, setFeedback] = useState('')
+  const [isConfirmed, setIsConfirmed] = useState(false)
 
   const generateQRS = () => {
     // Generate a random angle between -180 and 180 degrees
@@ -27,7 +28,14 @@ export default function ECGAxisQuiz() {
 
   const handleSelection = (x: number, y: number) => {
     setUserSelection({ x, y })
-    checkAnswer(x, y)
+    setIsConfirmed(false)
+  }
+
+  const confirmSelection = () => {
+    if (userSelection) {
+      checkAnswer(userSelection.x, userSelection.y)
+      setIsConfirmed(true)
+    }
   }
 
   const checkAnswer = (x: number, y: number) => {
@@ -38,7 +46,7 @@ export default function ECGAxisQuiz() {
     const tolerance = Math.PI / 8  // About 22.5 degrees tolerance
 
     if (difference < tolerance || difference > 2 * Math.PI - tolerance) {
-      setFeedback('Correct! Great job!')
+      setFeedback('Correct, Great job!')
     } else {
       setFeedback('Not quite. Try again!')
     }
@@ -57,6 +65,9 @@ export default function ECGAxisQuiz() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <UnitCircle onSelect={handleSelection} userSelection={userSelection} />
+              <Button onClick={confirmSelection} className="mt-4" disabled={!userSelection || isConfirmed}>
+                Confirm Selection
+              </Button>
             </div>
             <div>
               <QRSComplex leadI={qrsData.leadI} leadAVF={qrsData.leadAVF} />
