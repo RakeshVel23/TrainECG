@@ -2,20 +2,21 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import * as React from 'react';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'ECG Axis Interpretation Trainer',
+  title: 'Medical Learning Tools',
   description:
-    'Interactive tool to practice ECG axis interpretation with real-time feedback',
+    'Interactive tools to support medical education and training',
   openGraph: {
-    title: 'ECG Axis Interpretation Trainer',
+    title: 'Medical Learning Tools',
     description:
-      'Interactive tool to practice ECG axis interpretation with real-time feedback',
+      'Interactive tools to support medical education and training',
     images: [
       {
-        url: '/og-image.png', // Add your own image path here
+        url: '/og-image.png',
         width: 1200,
         height: 630,
       },
@@ -30,7 +31,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
