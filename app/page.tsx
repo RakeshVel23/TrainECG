@@ -8,7 +8,11 @@ export default function HomePage() {
       description: "Practice identifying electrical axis using interactive QRS complexes",
       href: "/ecg-axis",
     },
-    // More tools will be added here in the future
+    {
+      title: "Kidney Physiology Simulator",
+      description: "Explore how different variables affect GFR and clearance through interactive sliders",
+      href: "/kidney-sim",
+    },
   ]
 
   return (

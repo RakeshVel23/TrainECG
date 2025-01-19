@@ -43,7 +43,7 @@ export default function ECGAxisQuiz() {
     const userAngle = Math.atan2(y, x)
     
     const difference = Math.abs(actualAngle - userAngle)
-    const tolerance = Math.PI / 8  // About 22.5 degrees tolerance
+    const tolerance = Math.PI / 10  // About 18 degrees tolerance
 
     if (difference < tolerance || difference > 2 * Math.PI - tolerance) {
       setFeedback('Correct, Great job!')
