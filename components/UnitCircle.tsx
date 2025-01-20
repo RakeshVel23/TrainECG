@@ -52,11 +52,11 @@ const UnitCircle: React.FC<UnitCircleProps> = ({ onSelect, userSelection }) => {
       ctx.strokeStyle = 'black'
 
       // Draw angle value in a red box
-      ctx.fillStyle = 'white'
-      ctx.fillRect(10, 10, 40, 30)
-      ctx.fillStyle = 'black'
-      ctx.font = '16px Arial'
-      ctx.fillText(`${angle}°`, 15, 30)
+      // ctx.fillStyle = 'white'
+      // ctx.fillRect(10, 10, 40, 30)
+      // ctx.fillStyle = 'black'
+      // ctx.font = '16px Arial'
+      // ctx.fillText(`${angle}°`, 15, 30)
     }
 
     drawCircle()
