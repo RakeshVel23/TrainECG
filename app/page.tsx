@@ -52,11 +52,11 @@ export default function HomePage() {
           Interactive medical learning tools for students and educators
         </p>
 
-        {/* Pathology Section */}
+        {/* Physiology Section */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6 text-gray-700">Pathology Interpretation</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-gray-700">Physiology Simulators</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {tools.pathology.map((tool) => (
+            {tools.physiology.map((tool) => (
               <Link href={tool.href} key={tool.href} className="transition-transform hover:scale-105">
                 <Card className="h-full bg-white/80 backdrop-blur border-none shadow-lg">
                   <CardHeader>
@@ -69,11 +69,11 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Physiology Section */}
+        {/* Pathology Section */}
         <div>
-          <h2 className="text-2xl font-semibold mb-6 text-gray-700">Physiology Simulators</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-gray-700">Pathology Interpretation</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {tools.physiology.map((tool) => (
+            {tools.pathology.map((tool) => (
               <Link href={tool.href} key={tool.href} className="transition-transform hover:scale-105">
                 <Card className="h-full bg-white/80 backdrop-blur border-none shadow-lg">
                   <CardHeader>
