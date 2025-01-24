@@ -143,16 +143,16 @@ export default function ECGAxisQuiz() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="relative">
               <UnitCircle onSelect={handleSelection} userSelection={userSelection} />
-              <div className="relative">
+              <div className="absolute inset-0 pointer-events-none">
                 <img 
                   src="/heart-diagram.png" 
                   alt="Heart diagram"
-                  className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 opacity-50"
+                  className="absolute top-[25%] left-1/2 transform -translate-x-1/2 w-24 h-24 opacity-50"
                 />
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="absolute top-[38%] left-1/2 transform translate-x-4 -translate-y-8">
+                      <button className="absolute top-[45%] left-1/2 transform translate-x-4 -translate-y-8 pointer-events-auto">
                         <HelpCircle className="h-4 w-4 text-muted-foreground" />
                       </button>
                     </TooltipTrigger>
