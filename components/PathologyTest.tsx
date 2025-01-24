@@ -47,9 +47,10 @@ interface PathologyTestProps {
   title: string
   parameters: { [key: string]: TestParameter }
   conditions: Condition[]
+  extraSelect?: React.ReactNode
 }
 
-export default function PathologyTest({ title, parameters, conditions }: PathologyTestProps) {
+export default function PathologyTest({ title, parameters, conditions, extraSelect }: PathologyTestProps) {
   const [currentTest, setCurrentTest] = useState<TestResult | null>(null)
   const [currentCondition, setCurrentCondition] = useState<Condition | null>(null)
   const [userSelection, setUserSelection] = useState<string>("")
@@ -187,6 +188,8 @@ export default function PathologyTest({ title, parameters, conditions }: Patholo
                     ))}
                   </SelectContent>
                 </Select>
+
+                {extraSelect}
 
                 <div className="flex gap-4">
                   <Button onClick={checkAnswer} disabled={!userSelection}>

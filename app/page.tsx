@@ -7,7 +7,12 @@ export default function HomePage() {
       {
         title: "Full Blood Count",
         description: "Interpret blood counts and identify haematological conditions",
-        href: "/pathology/fbc",
+        href: "/pathology/blood-test",
+      },
+      {
+        title: "Arterial Blood Gas",
+        description: "Analyze acid-base status and oxygenation",
+        href: "/pathology/abg",
       },
       {
         title: "Liver Function Tests",
@@ -49,7 +54,8 @@ export default function HomePage() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-bold text-center mb-4 text-gray-800">MedSandbox</h1>
         <p className="text-center text-gray-600 mb-12 text-lg">
-          Interactive medical learning tools for students and educators
+          Interactive medical learning tools for students and educators 
+          This website is in its early stages of development. There may be bugs and errors.
         </p>
 
         {/* Physiology Section */}

@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
           <div className="mb-4 md:mb-0">
-            © {currentYear} MedSandbox. All rights reserved.
+            © {currentYear} Rakesh Velmurugan.
           </div>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-gray-900 transition-colors">
