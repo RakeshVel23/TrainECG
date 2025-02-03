@@ -82,7 +82,7 @@ export default function ECGAxisQuiz() {
     const userAngle = Math.atan2(y, x)
     
     const difference = Math.abs(actualAngle - userAngle)
-    const tolerance = Math.PI / 10
+    const tolerance = Math.PI / 10 // 18 degrees tolerance
 
     // Convert angles to degrees for display
     const actualDegrees = Math.round((actualAngle * 180) / Math.PI)
@@ -205,8 +205,8 @@ export default function ECGAxisQuiz() {
                   {correctAngle !== null && (
                     <p className="text-sm">
                       {feedback.includes('Correct') 
-                        ? `The axis was ${correctAngle}°` 
-                        : `The correct axis was ${correctAngle}°`}
+                        ? `The axis was ${-correctAngle}°` 
+                        : `The correct axis was ${-correctAngle}°`}
                     </p>
                   )}
                 </div>
